@@ -1,0 +1,22 @@
+LOG_LEVEL=debug PEXELS_API_KEY=nJo0eKRT1i4UEhWYCsuZTi66wG5o2dOrtq51YYlPGdAYhaDXKjA0IpNI npx short-video-creator
+
+docker run -it --rm --name short-video-maker -p 3123:3123 \
+  -e PEXELS_API_KEY=nJo0eKRT1i4UEhWYCsuZTi66wG5o2dOrtq51YYlPGdAYhaDXKjA0IpNI \
+  gyoridavid/short-video-maker
+
+docker run -d --name short-video-maker -p 3123:3123 \
+  -e PEXELS_API_KEY=nJo0eKRT1i4UEhWYCsuZTi66wG5o2dOrtq51YYlPGdAYhaDXKjA0IpNI \
+  gyoridavid/short-video-maker
+
+-----------------------
+docker run -d --name short-video-maker \
+  -p 127.0.0.1:3123:3123 \
+  -e PEXELS_API_KEY=nJo0eKRT1i4UEhWYCsuZTi66wG5o2dOrtq51YYlPGdAYhaDXKjA0IpNI \
+  gyoridavid/short-video-maker
+
+
+docker start short-video-maker
+
+
+http://host.docker.internal:3123/mcp/sse
+
